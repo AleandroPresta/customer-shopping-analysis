@@ -1,5 +1,5 @@
-# Customer Shopping Analysis
+# Data Science Projects
 
-An analysis on the Customer Shopping Dataset on Kaggle
+Repository containing all my data science projects. Each project is in its own directory:
 
-You can find the dataset [here](https://www.kaggle.com/datasets/bhadramohit/customer-shopping-latest-trends-dataset).
+1. [Customer Shopping Analysis](customer-shopping/README.md)
