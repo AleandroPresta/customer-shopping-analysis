@@ -24,6 +24,28 @@ def plot_numerical_distribution(dataset: pd.DataFrame, column_name: str):
     plt.xticks(fontsize=12)
     plt.yticks(fontsize=12)
     plt.show()
+    
+
+def plot_numerical_distribution_grid(dataset: pd.DataFrame, columns: list):
+    num_columns = 3
+    num_rows = (len(columns) + num_columns - 1) // num_columns
+    fig, ax = plt.subplots(num_rows, num_columns, figsize=(20, 6 * num_rows))
+    ax = ax.flatten()
+    
+    for i, column in enumerate(columns):
+        sns.histplot(dataset[column], kde=True, color='skyblue', bins=30, ax=ax[i])
+        ax[i].set_xlabel(column, fontsize=14)
+        ax[i].set_ylabel('Number of purchases', fontsize=14)
+        ax[i].set_title(f'Distribution of {column}', fontsize=16)
+        ax[i].grid(True, linestyle='--', alpha=0.7)
+        ax[i].tick_params(axis='x', labelsize=12)
+        ax[i].tick_params(axis='y', labelsize=12)
+    
+    for j in range(i + 1, len(ax)):
+        fig.delaxes(ax[j])
+    
+    plt.tight_layout()
+    plt.show()
 
 
 def plot_pie_chart(dataset: pd.DataFrame, column_name: str):
