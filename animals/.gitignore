@@ -1,0 +1,2 @@
+# Ignore the .data directory containing 600+ MB of image data
+.data/
